@@ -5,97 +5,58 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/widget_bg_rounded"
-    android:padding="8dp">
+    android:padding="6dp">
 
-    <!-- 标题 -->
-    <TextView
-        android:id="@+id/widget_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="币安阿尔法"
-        android:textSize="16sp"
-        android:textColor="#1A1A2E"
-        android:textStyle="bold" />
-
-    <!-- 统计行 -->
+    <!-- 标题行：币安阿尔法 + 右侧更新时间 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="6dp">
+        android:gravity="center_vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="币安阿尔法"
+            android:textSize="13sp"
+            android:textColor="#1A1A2E"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_update_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:text=""
+            android:textSize="9sp"
+            android:textColor="#AAAAAA"
+            android:gravity="right" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/widget_checkin_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="--"
-                android:textSize="20sp"
-                android:textColor="#1A1A2E"
-                android:textStyle="bold" />
+    <!-- 签到数 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="2dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="签到"
-                android:textSize="11sp"
-                android:textColor="#888888" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/widget_checkin_count"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:text="--"
+            android:textSize="16sp"
+            android:textColor="#1A1A2E"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/widget_airdrop_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20sp"
-                android:textColor="#2E7D32"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="空投"
-                android:textSize="11sp"
-                android:textColor="#888888" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/widget_warning_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20sp"
-                android:textColor="#C62828"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="预警"
-                android:textSize="11sp"
-                android:textColor="#888888" />
-        </LinearLayout>
+            android:text=" 签到"
+            android:textSize="11sp"
+            android:textColor="#888888" />
     </LinearLayout>
 
     <!-- 空投列表 -->
@@ -104,18 +65,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textColor="#333333"
         android:singleLine="true"
         android:ellipsize="end"
-        android:layout_marginTop="3dp" />
+        android:layout_marginTop="2dp" />
 
     <TextView
         android:id="@+id/widget_airdrop_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textColor="#333333"
         android:singleLine="true"
         android:ellipsize="end" />
@@ -125,20 +86,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textColor="#333333"
         android:singleLine="true"
         android:ellipsize="end" />
-
-    <!-- 更新时间 -->
-    <TextView
-        android:id="@+id/widget_update_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="9sp"
-        android:textColor="#AAAAAA"
-        android:gravity="right"
-        android:layout_marginTop="3dp" />
 
 </LinearLayout>

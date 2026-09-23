@@ -43,8 +43,6 @@ class AppWidgetProvider : AppWidgetProvider() {
             // 先渲染基本布局
             val views = RemoteViews(context.packageName, R.layout.widget_layout)
             views.setTextViewText(R.id.widget_checkin_count, "--")
-            views.setTextViewText(R.id.widget_airdrop_count, "0")
-            views.setTextViewText(R.id.widget_warning_count, "0")
 
             val intent = Intent(context, MainActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -171,8 +169,6 @@ class AppWidgetProvider : AppWidgetProvider() {
 
                 val checkin = json.optInt("today_checkin", 0)
                 views.setTextViewText(R.id.widget_checkin_count, String.format("%,d", checkin))
-                views.setTextViewText(R.id.widget_airdrop_count, json.optInt("today_airdrop_count", 0).toString())
-                views.setTextViewText(R.id.widget_warning_count, json.optInt("warning_count", 0).toString())
 
                 val airdrops = json.optJSONArray("latest_airdrops")
                 val aId = listOf(R.id.widget_airdrop_1, R.id.widget_airdrop_2, R.id.widget_airdrop_3)
