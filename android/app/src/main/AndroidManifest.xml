@@ -25,6 +25,7 @@
         <!-- 桌面小部件 -->
         <receiver
             android:name=".AppWidgetProvider"
+            android:label="@string/widget_label"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
